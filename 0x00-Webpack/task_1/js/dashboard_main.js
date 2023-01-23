@@ -1,4 +1,5 @@
 import $ from "jquery";
+import _ from "lodash";
 
 $("body").append("<p>Holberton Dashboard</p>");
 $("body").append("<p>Dashboard data for the students</p>");
