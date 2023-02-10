@@ -50,7 +50,23 @@ class App extends React.Component {
             <Header />
           </div>
           <body className="App-body">
-            {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+            {this.props.isLoggedIn ? (
+              <BodySectionWithMarginBottom title="Course list">
+                <CourseList listCourses={this.listCourses} />
+              </BodySectionWithMarginBottom>
+            ) : (
+              <BodySectionWithMarginBottom title="Log in to continue">
+                <Login />
+              </BodySectionWithMarginBottom>
+            )}
+            <BodySection title="News from the school">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perspiciatis at tempora odio, necessitatibus repudiandae
+                reiciendis cum nemo sed asperiores ut molestiae eaque aliquam
+                illo ipsa iste vero dolor voluptates.
+              </p>
+            </BodySection>
           </body>
 
           <footer className="App-footer">
