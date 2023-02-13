@@ -6,10 +6,20 @@
   width: 95vw;
 }
 
-li[data="default"] {
+[data-notification-type="default"] {
   color: blue;
 }
 
-li[data="urgent"] {
+[data-urgent],
+[data-notification-type="urgent"] {
   color: red;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuItem {
+  text-align: right;
 }
