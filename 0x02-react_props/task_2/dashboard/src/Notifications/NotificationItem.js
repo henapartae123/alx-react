@@ -1,6 +1,7 @@
 import React from "react";
+import "./Notifications.css";
 
-function NotificationItem({ type, html, value }) {
+const NotificationItem = ({ type, html, value }) => {
   return (
     <>
       {type && value ? <li data-notification-type={type}>{value}</li> : null}
@@ -9,6 +10,6 @@ function NotificationItem({ type, html, value }) {
       ) : null}
     </>
   );
-}
+};
 
 export default NotificationItem;

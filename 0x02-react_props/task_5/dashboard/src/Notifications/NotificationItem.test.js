@@ -2,17 +2,19 @@ import React from "react";
 import NotificationItem from "./NotificationItem";
 import { shallow } from "enzyme";
 
-describe("NotificationItem test", () => {
-  it("Renders without crashing", () => {
-    const wrapper = shallow(<NotificationItem />);
-    expect(wrapper.exists()).toBe(true);
-  });
-  it('renders correct html from type="default" value="test" props', () => {
+describe("rendering components", () => {
+  it("renders without crashing", () => {
     const wrapper = shallow(<NotificationItem />);
 
-    wrapper.setProps({ type: "default", value: "test" });
+    expect(wrapper.exists()).toBe(true);
+  });
+
+  it('renders correct html for type="default" value="val" props', () => {
+    const wrapper = shallow(<NotificationItem />);
+
+    wrapper.setProps({ type: "default", value: "val" });
     expect(wrapper.html()).toEqual(
-      '<li data-notification-type="default">test</li>'
+      '<li data-notification-type="default">val</li>'
     );
   });
 

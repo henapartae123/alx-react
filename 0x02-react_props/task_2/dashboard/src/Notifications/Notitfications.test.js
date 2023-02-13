@@ -9,16 +9,28 @@ describe("Notification component tests", () => {
     expect(notification).toBeDefined();
   });
 
-  it("renders ul", () => {
-    const notification = shallow(<Notifications />);
+  it("renders ul items", () => {
+    const wrapper = shallow(<Notifications />);
 
-    expect(notification.find("ul")).toBeDefined();
+    expect(wrapper.find("ul").children()).toHaveLength(3);
+    expect(wrapper.find("ul").childAt(0).html()).toEqual(
+      '<li data-notification-type="default">New course available</li>'
+    );
+    expect(wrapper.find("ul").childAt(1).html()).toEqual(
+      '<li data-notification-type="urgent">New resume available</li>'
+    );
+    expect(wrapper.find("ul").childAt(2).html()).toEqual(
+      `<li data-urgent=\"true\">${getLatestNotification()}</li>`
+    );
   });
 
   it("renders three list items", () => {
-    const notification = shallow(<Notifications />);
+    const wrapper = shallow(<Notifications />);
 
-    expect(notification.find("li")).toHaveLength(3);
+    expect(wrapper.find("ul").children()).toHaveLength(3);
+    wrapper.find("ul").forEach((node) => {
+      expect(node.equals(<NotificationItem />));
+    });
   });
 
   it("renders correct text", () => {

@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Notifications from "../Notifications/Notifications";
+import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import CourseList from "../CourseList/CourseList";
+import Notifications from "../Notifications/Notifications";
 import PropTypes from "prop-types";
+import CourseList from "../CourseList/CourseList";
 import { getLatestNotification } from "../utils/utils";
 
 const listCourses = [
@@ -25,18 +25,10 @@ function App(isLoggedIn) {
     <React.Fragment>
       <Notifications listNotifications={listNotifications} />
       <div className="App">
-        <div className="Header">
-          <Header />
-        </div>
-        <body className="App-body">
-          {isLoggedIn ? <CourseList /> : <Login />}
-        </body>
-
-        <footer className="App-footer">
-          <Footer />
-        </footer>
+        <Header />
+        {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+        <Footer />
       </div>
-      ;
     </React.Fragment>
   );
 }

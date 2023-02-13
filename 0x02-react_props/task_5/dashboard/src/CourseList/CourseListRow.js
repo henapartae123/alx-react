@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
+const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
   return (
     <tr>
       {isHeader ? (
@@ -21,7 +21,7 @@ function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
       )}
     </tr>
   );
-}
+};
 
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
@@ -33,4 +33,5 @@ CourseListRow.defaultProps = {
   isHeader: false,
   textSecondCell: null,
 };
+
 export default CourseListRow;
