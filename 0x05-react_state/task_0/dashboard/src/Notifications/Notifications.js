@@ -17,7 +17,10 @@ class Notifications extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.length > this.props.listNotifications.length;
+    return (
+      nextProps.length > this.props.listNotifications.length ||
+      this.props.displayDrawer != nextProps.displayDrawer
+    );
   }
   render() {
     return (
@@ -25,7 +28,9 @@ class Notifications extends Component {
         {!this.props.displayDrawer ? (
           <div
             className={css(styles.menuItem)}
-            onClick={this.props.handleDisplayDrawer}
+            onClick={(e) => {
+              this.props.handleDisplayDrawer();
+            }}
           >
             <p>Your notifications</p>
           </div>
