@@ -27,8 +27,6 @@ class App extends Component {
       ],
     };
     // event handler lots
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
@@ -126,6 +124,16 @@ const styles = StyleSheet.create({
     fontFamily: "Arial, Helvetica, sans-serif",
   },
 });
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
+  displayDrawer: PropTypes.bool,
+};
+
+App.defaultProps = {
+  isLoggedIn: false,
+  displayDrawer: false,
+};
 
 export function mapStateToProps(state) {
   return {
