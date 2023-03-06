@@ -142,9 +142,4 @@ export function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = {
-  displayNotificationDrawer: uiAC.displayNotificationDrawer,
-  hideNotificationDrawer: uiAC.hideNotificationDrawer,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
