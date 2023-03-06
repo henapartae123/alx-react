@@ -60,14 +60,6 @@ class App extends Component {
     document.removeEventListener("keydown", this.handleKeyPress);
   }
 
-  handleDisplayDrawer() {
-    this.setState({ displayDrawer: true });
-  }
-
-  handleHideDrawer() {
-    this.setState({ displayDrawer: false });
-  }
-
   logIn(email, password) {
     this.setState({
       user: {
@@ -95,9 +87,9 @@ class App extends Component {
           <Notifications
             listNotifications={this.state.listNotifications}
             markNotificationAsRead={this.markNotificationAsRead}
-            displayDrawer={this.state.displayDrawer}
-            handleDisplayDrawer={this.handleDisplayDrawer}
-            handleHideDrawer={this.handleHideDrawer}
+            displayDrawer={this.props.displayDrawer}
+            handleDisplayDrawer={this.props.handleDisplayDrawer}
+            handleHideDrawer={this.props.handleHideDrawer}
           />
           <div className={css(styles.App)}>
             <Header />
