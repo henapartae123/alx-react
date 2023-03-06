@@ -230,3 +230,14 @@ describe("Testing App Component's State />", () => {
     wrapper.unmount();
   });
 });
+
+describe("Testing mapStateToProps", () => {
+  it("test that verify that the function returns the right object", () => {
+    let state = fromJS({
+      isUserLoggedIn: true,
+    });
+    expect(mapStateToProps(state)).toEqual(
+      expect.objectContaining({ isLoggedIn: true })
+    );
+  });
+});
