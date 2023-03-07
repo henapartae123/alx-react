@@ -9,13 +9,6 @@ export const getNotifications = (data) => {
   return notification();
 };
 
-export const getUnreadNotifications = (data) => {
-  const notification = Object.values(getNotifications(data).toJS());
-  return notification.filter((not) => {
-    not.isRead;
-  });
-};
-
 const getNotificationsSelector = (state) => state.notifications;
 
 export const getUnreadNotificationsByType = createSelector(
