@@ -33,6 +33,7 @@ class App extends Component {
       this.props.logOut();
     }
   }
+  // will attach event listeners to handlekeypress function
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
   }
@@ -60,7 +61,7 @@ class App extends Component {
 }
 
 App.defaultProps = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   logOut: () => {
     return;
   },

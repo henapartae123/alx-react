@@ -54,7 +54,7 @@ class Notifications extends Component {
                   value="No new notification for now"
                 />
               ) : null}
-              {this.props.listNotifications.map((val, idx) => {
+              {this.props.listNotifications.map((val, id) => {
                 return (
                   <NotificationItem
                     type={val.type}
@@ -80,7 +80,7 @@ Notifications.propTypes = {
 };
 
 Notifications.defaultProps = {
-  displayDrawer: false,
+  displayDrawer: true,
   listNotifications: [],
 };
 

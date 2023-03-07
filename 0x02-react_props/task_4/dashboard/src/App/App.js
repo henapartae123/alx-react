@@ -10,10 +10,9 @@ import CourseList from "../CourseList/CourseList";
 function App(isLoggedIn) {
   return (
     <React.Fragment>
-      <Notifications />
       <div className="App">
         <Header />
-        {isLoggedIn ? <CourseList /> : <Login />}
+        {!isLoggedIn ? <CourseList /> : <Login />}
         <Footer />
       </div>
     </React.Fragment>

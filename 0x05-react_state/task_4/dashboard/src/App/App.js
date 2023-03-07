@@ -24,6 +24,7 @@ class App extends Component {
         { id: 3, type: "urgent", html: getLatestNotification() },
       ],
     };
+    // event handler lots
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
     this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);

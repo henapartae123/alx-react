@@ -8,13 +8,20 @@ class NotificationItem extends Component {
     return (
       <>
         {type && value ? (
-          <li onClick={() => markAsRead(id)} data-notification-type={type}>
+          <li
+            onClick={() => {
+              markAsRead(id);
+            }}
+            data-notification-type={type}
+          >
             {value}
           </li>
         ) : null}
         {html ? (
           <li
-            onClick={() => markAsRead(id)}
+            onClick={() => {
+              markAsRead(id);
+            }}
             data-urgent
             dangerouslySetInnerHTML={{ __html: html }}
           ></li>
